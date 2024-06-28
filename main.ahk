@@ -1,4 +1,4 @@
-; steam://connect/[IP]
+
 
 svFile := A_ScriptDir "\servers.txt"
 
@@ -60,7 +60,7 @@ OpenNewGui(*)
     if FileExist(svFile) {
         Loop Read, svFile
         {
-            if A_LoopReadLine {  ; Skip empty lines
+            if A_LoopReadLine {
                 fields := StrSplit(A_LoopReadLine, ",")
                 if fields.Length = 2
                     LV.Add(, fields[1], fields[2])
@@ -74,7 +74,6 @@ SaveAndExit(senders, info*)
     ExitApp
 }
 
-; Function to save servers to file
 SaveServers()
 {
     FileDelete(svFile)
